@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <title>Plan</title>
+</head>
+
+<body style="color:black">
+    <nav id="navBar" class="contentBlock">
+        <div id="topURLDiv">
+            <a href="index.html" class="toplink">Weather App</a>
+            <a href="Plan.html" class="toplink">Software Development Plan</a>
+        </div>
+    </nav>
+    <div id="bottomTitleBlock">
+        <h2>Software Development Plan</h2>
+    </div>
+    <div>
+        <h2> Phase 0: Requirements and Specifications </h2>
+        <p id="p1">
+            The objective of this assignment is to create a weather app that has 3 API calls. The three calls are first
+            to get the location of the computer
+            through their IP address using a geolocator. Once the latitude and longitude is obtained, that information
+            is used to get the current weather for
+            that specific location with the second API call. Thirdly, with the coordinates again, the same site is
+            queried to obtain a 5-day, 3 hour forecast
+            which is then displayed on the page each one. The user then can vote which ones are likely and which ones
+            are unlikely. This is pretty much all
+            done with Vue and not Vanilla javascript.
+        </p>
+    </div>
+    <div>
+        <h2> Phase 1: System Analysis </h2>
+        <h4>Data Used by the Program:</h4>
+        <ul>
+            <li>input from user : The user's IP address is obtained. The user can also click on different forecasts to
+                vote on their likeliness.</li>
+        </ul>
+        <h4>Form the Output will Take:</h4>
+        <p>The output will be a SPA built with Vue, with different sections for the top links, title, location, current
+            weather, and predictions. It is interactable
+            because the user can click and vote on the bottom forecasts.
+        </p>
+        <h4>Algorithms and Formula to be Used:</h4>
+        <ul>
+            <li><code>Vue</code> Vue is used in the html instead of the lower-level template language (Django). Vue is
+                also used in the javascript to create
+                apps to mount to html elements to monitor their changes in the DOM. The data block contains the
+                characteristics of the app.</li>
+            <li><code>fetch</code>: There are 3 fetch calls. The second call is nested in the first call. All must be
+                wrapped in a single try/catch block
+                because the errors are pushed to the bottom anyway. They use promise chaining to avoid hadouken code.
+            </li>
+            <li><code>methods</code>I'll probably need a method to deal with the dates and a method to toggle the color
+                of the divs.</li>
+            <li><code>computed properties</code>I'm going to use computed properties to monitor the number of likely,
+                unlikely, and neutral votes in the page. I'm
+                doing this because if one isn't changing but is being called multiple times, I want that information to
+                be cached so it's not being recalculated.
+            </li>
+        </ul>
+    </div>
+    <div>
+        <h2> Phase 2: Implementation </h2>
+        <h4>index.html</h4>
+        <ul>
+            <li><code>navBar</code>Top navigation bar with links to the plan and back</li>
+            <li>Titleblock: pretty self explanatory</li>
+            <li>Location: made by making an API call</li>
+            <li>Current Conditions: made an API call and printing out the results</li>
+            <li>5-day 3 hour forecast: 40 div's showing a prediction for every 3 hours for 5 days after the current
+                time.</li>
+        </ul>
+        <h4>script.js</h4>
+        <ul>
+            <li><code>Vue.createApp</code> This is where the data() block is stored with it's return vals.</li>
+            <li><code>methods</code>Date converter method, toggling the color of div method</li>
+            <li><code>computed</code>This section is for computed properties. This has three for-loops that go through
+                and count the number of likely,
+                unlikely, and neutral divs to be constantly monitored by Vue.</li>
+            <li><code>created</code>The created() is a block in the rendering of the page that can be targeted with Vue.
+                This is where the fetch()
+                calls are made.</li>
+        </ul>
+        <p>I couldn't figure out why I was getting a CORS error for about 30 minutes. Turns out, for some reason, when I
+            copied over the URL from one of the API's doc pages, it didn't copy the "https://" in the very beginning. It 
+            only started with the hostname so the site was freaking out. That was a pain. I also tried figuring out how to 
+            modify classes of a div with Vue but couldn't figure that out so had to switch how I was figuring out the 
+            counts. The rest went suspiciously smooth.
+        </p>
+    </div>
+    <div>
+        <h2> Phase 3: Testing and Debugging</h2>
+        <p>I used the javascript console a lot in debugging. That's really the only debugging method I used. I just made sure the json would print to the console, 
+            looked at the values that I needed, and wrote the code with them side-by-side. I also used the network tab in the developer tools to make sure my code 
+            handles well if the sites are blocked.
+        </p>
+    </div>
+    <div>
+        <h2> Phase 4: Deployment</h2>
+        <p>
+            Been constantly committing to Git-lab so we're good to go:).
+        </p>
+    </div>
+    <div>
+        <h2> Phase 5: Maintenence</h2>
+        <p> What parts of the program are sloppily written and hard to understand?:<br> -----I don't think any parts of
+            this program are written sloppily. I got this
+            assignment done faster than usual so I've had a lot of time to look it over and double check things. <br>
+            Are there parts of your program you don't understand
+            how they work? <br> ----- I'm still a little confused with Vue but it's pretty self explanatory as you go. 
+            <br> If a bug is reported in a few months, how long would it take you to find the cause? <br> -----I think I could find the cause
+            pretty easily. I think it would take me only 5 minutes or less because this program isn't huge and I understand most of it.<br>
+             Will your documentation make sense to anybody else/ youself in 6 months time? <br>----- Yes, I might need a quick refresher on Vue 
+             but the program is small so I could pick it back up pretty quick. <br>How easy would it be to add a new feature to the program in 
+             a year? <br> ----- It would be super easy, my documentation was really good. <br> Will your program work after upgrading...<br>
+              ----- your computer's hardware? Depends on a lot of things. I don't really know enough to make a guess. <br> -----the
+            operating system? Yes because It's still going to use html and javascript the same and http the same. We also were instructed to use 
+            "data-" when binding new attributes so we good.<br>Javascript/Html? <br>----- All depends on what is actually changed.
+        </p>
+    </div>
+</body>
+
+</html>

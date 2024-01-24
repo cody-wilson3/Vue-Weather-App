@@ -1,0 +1,100 @@
+body {
+    color: white;
+}
+
+#navBar {
+    background-color: rgb(221, 214, 214);
+    font:bold;
+    font-size:larger;
+}
+
+#topURLDiv {
+    display: flex;
+    gap:30px;
+}
+
+
+#titleBlock {
+    left:0;
+    right:0;
+    top:0;
+    background-color: rgb(28, 103, 27);
+    display:flex;
+    justify-content: center;
+    border-radius:12px;
+}
+
+.contentBlock {
+    left:0;
+    right:0;
+    top:2px;
+    background-color:rgb(15, 4, 88);
+    padding:1px;
+    border-radius: 12px;
+    display:flex;
+    justify-content: center;
+    
+}
+
+.child {
+    display:flex;
+    justify-content: center;
+}
+
+#currentCond {
+    background-color: rgb(74, 45, 16);
+}
+
+#errorBlock {
+    background-color: maroon;
+    color:white;
+    border: 2px solid red;
+}
+
+#red{color:red;}
+#gray{color:rgb(195, 193, 193);}
+#green{color:rgb(4, 207, 4);}
+
+.neutral {
+    background-color: gray;
+    display:flex;
+    justify-content: center;
+    border-radius:10px;
+    margin:10px;
+}
+
+.content {
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    gap:10px;
+}
+
+.unlikely {
+    background-color: red;
+    display:flex;
+    justify-content: center;
+    border-radius:10px;
+    margin:10px;
+}
+
+.likely {
+    background-color: green;
+    display:flex;
+    justify-content: center;
+    border-radius:10px;
+    margin:10px;
+}
+
+#forecast {
+    padding-top:5px;
+    background-color: rgb(8, 79, 126);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h3 {
+    display:flex;
+    justify-content: center;
+}
